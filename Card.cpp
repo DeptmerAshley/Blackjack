@@ -17,7 +17,7 @@ Card::Ranks Card::getRank()
   return Rank;
 }
 
-card::Suits Card::getSuits()
+Card::Suits Card::getSuit()
 {
   return Suit;
 
@@ -25,11 +25,13 @@ card::Suits Card::getSuits()
 
 int Card::getFaceValue()
 {
-  if(Rank<=TEN){
+  if(Rank <= TEN){
     return static_cast<int>(Rank);
   }
-  if(Rank <= KING && Rank >=10){
+  if(Rank <= KING){
     return 10;
   }
-  return 11;
+  if(Rank = ACE){
+    return 11;
+  }
 }
